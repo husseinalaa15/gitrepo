@@ -17,7 +17,7 @@ const useSearchRepos = () => {
 
     try {
       const response = await axios.get(`/search/repositories?q=${query}`);
-      setRepositories(response.data.items);
+      setRepositories(response.data.items.slice(0, 10));
     } catch (err) {
       setError("Failed to fetch repositories. Please try again.");
     } finally {

@@ -17,11 +17,12 @@ const Search = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search GitHub Repositories..."
-        className="border p-2 w-full rounded-md"
+        className="border-2  text-blue-400 focus-visible:outline-none focus:!border-blue-400   border-primary p-2 w-full rounded-md"
+        maxLength={30}
       />
       <button
         type="submit"
-        className=" border-1 font-bold  text-white p-2 rounded-md"
+        className=" border-2 font-bold text-blue-400 hover:bg-blue-400 hover:text-blue-950 border-primary p-2 rounded-md cursor-pointer"
       >
         Search
       </button>

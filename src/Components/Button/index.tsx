@@ -9,8 +9,8 @@ const StarButton = ({ repo }: { repo: Repository }) => {
   console.log(repo);
   return (
     <button
-      className={`px-3 py-1 rounded w-full ${
-        isStarred ? "bg-red-500" : "bg-green-500"
+      className={`px-3 py-1 rounded w-full cursor-pointer ${
+        isStarred ? "bg-danger" : "bg-accent"
       } text-white`}
       onClick={() => handleStarToggle(repo.owner.login, repo.name, repo.id)}
     >
