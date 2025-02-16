@@ -10,7 +10,7 @@ const RepoList = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  gap-5 rounded-md ">
       {repositories.map((repo) => (
-        <RepoCard repo={repo} />
+        <RepoCard repo={repo} key={repo.id} />
       ))}
     </div>
   );

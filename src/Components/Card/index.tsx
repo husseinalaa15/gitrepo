@@ -21,10 +21,7 @@ type Owner = {
 
 const RepoCard: React.FC<IProps> = ({ repo }) => {
   return (
-    <div
-      key={repo?.id}
-      className="   rounded-md my-2   p-7 bg-secondary shadow- grid grid-cols-1 gap-3"
-    >
+    <div className="   rounded-md my-2   p-7 bg-secondary shadow- grid grid-cols-1 gap-3">
       <div className="overflow-hidden grid grid-cols-1 gap-3">
         <div className="card-header grid grid-cols-2 justify-between w-full items-center">
           <h3 className="text-lg  font-bold">{truncateText(repo?.name, 10)}</h3>

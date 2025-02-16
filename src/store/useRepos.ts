@@ -31,7 +31,21 @@ const useRepoStore = create<RepoState>((set, get) => ({
         ? state.starredRepos.filter((id) => id !== repoId)
         : [...state.starredRepos, repoId];
 
-      return { starredRepos: updatedStarredRepos };
+      const updatedRepositories = state.repositories.map((repo) =>
+        repo.id === repoId
+          ? {
+              ...repo,
+              stargazers_count: isStarred
+                ? repo.stargazers_count - 1
+                : repo.stargazers_count + 1,
+            }
+          : repo
+      );
+
+      return {
+        starredRepos: updatedStarredRepos,
+        repositories: updatedRepositories,
+      };
     }),
   isRepoStarred: (repoId) => get().starredRepos.includes(repoId),
 }));
