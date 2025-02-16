@@ -19,6 +19,7 @@ type Owner = {
 };
 
 const RepoCard: React.FC<IProps> = ({ repo }) => {
+  console.log(repo, "REPO");
   return (
     <div
       key={repo.id}
@@ -44,7 +45,7 @@ const RepoCard: React.FC<IProps> = ({ repo }) => {
         </div>
       </div>
       <div className="self-end">
-        <StarButton repoId={repo.id} />
+        <StarButton repo={repo} />
       </div>
     </div>
   );
